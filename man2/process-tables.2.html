@@ -1,0 +1,50 @@
+<html lang="en-US">
+
+<h1>PROCESS-TABLES(2) - Manual Page</h1>
+<link rel="stylesheet" href="../styles.css">
+
+
+<!-- Add more headers -->
+<table class="sec-table">
+    <tr>
+        <td>
+            <p class="section-dir">
+                <a href="#NAME">NAME</a> | <a href="#DESCRIPTION">DESCRIPTION</a> | <a href="#SYNOPSIS">SYNOPSIS</a>
+            </p>
+        </td>
+    </tr>
+</table>
+
+<h3 id="NAME">NAME</h3>
+
+<pre>
+    process-tables - The process's data access table in Lua 5.*
+</pre>
+
+<h3 id="SYNOPSIS">SYNOPSIS</h3>
+
+<pre>
+ <b>
+     <span style="color: #330000">local tbl = {}</span>
+ </b>
+
+     <span style="color: green">return tbl</span>
+</pre>
+
+<h3 id="DESCRIPTION">DESCRIPTION</h3>
+<pre>
+    The Process tables is the simplest part of building a <a href="../man1/lkernel.1.html">LKernel</a> for your applications.
+    Process tables are returned tables from the .dsi file. Used in the "MAIN" process, etc...
+
+    The Use of process tables are to give the compiler a direction to go in to run the program.
+    Since all programs are ran in stack, the process goes like this:
+
+    <b class="sub-section-header">lua-stack tables</b>
+        [get program]
+            [get tbl]
+                [run function from tbl]
+    Stack tables format are compiled like <a href="#SYNOPSIS">this</a>.
+</pre>
+
+
+</html>

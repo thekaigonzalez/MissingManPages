@@ -1,0 +1,46 @@
+<html lang="en-US">
+
+<h1>DISKUTILITY(1) - Manual Page</h1>
+<link rel="stylesheet" href="../styles.css">
+
+<!-- Add more headers -->
+<table class="sec-table">
+    <tr>
+        <td>
+            <p class="section-dir">
+                <a href="#NAME">NAME</a> | <a href="#SYNOPSIS">SYNOPSIS</a> | <a href="#DESCRIPTION">DESCRIPTION</a>
+            </p>
+        </td>
+    </tr>
+</table>
+
+<h3 id="NAME">NAME</h3>
+
+<pre>
+    diskutility - A Utility for running .dsi files.
+</pre>
+
+<h3 id="SYNOPSIS">SYNOPSIS</h3>
+
+<pre>
+    diskutility [-e ENTRY | --entry=ENTRY] [-A arg] [-v] [FILE]
+</pre>
+
+<h3 id="DESCRIPTION">DESCRIPTION</h3>
+
+<pre>
+    It works by initializing the disk into Lua 5.4's memory file stack and then
+    runs the file using either two methods, ANY, Or MAIN.
+
+    Main is a predefined function which is based off of the Linux Kernel's C main function.
+
+</pre>
+
+<h3 id="OPTIONS">OPTIONS</h3>
+
+<pre>
+    -e | --entry=N,
+        Runs the entry "N" from the file, "FILE"
+</pre>
+
+</html>

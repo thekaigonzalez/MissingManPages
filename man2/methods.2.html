@@ -1,0 +1,72 @@
+<html lang="en-US">
+
+<h1>METHODS(2) - Manual Page</h1>
+<link rel="stylesheet" href="../styles.css">
+
+
+<!-- Add more headers -->
+<table class="sec-table">
+    <tr>
+        <td>
+            <p class="section-dir">
+                <a href="#NAME">NAME</a> | <a href="#DESCRIPTION">DESCRIPTION</a>
+            </p>
+        </td>
+    </tr>
+</table>
+
+<h3 id="NAME">NAME</h3>
+
+<pre>
+     methods - methods for running C-DOS Programs.
+</pre>
+
+
+<h3 id="DESCRIPTION">DESCRIPTION</h3>
+
+<pre>
+    Methods are invoked in two ways, Listed below. Including Development tips.
+
+    <b class="sub-section-header">any disk method (traditional)</b>
+        The "ANY" (Any disk) method is usually ran by simply calling "luaL_dofile(L, SYS)" on the specified file.
+        No other known antics go into running the .dsi program. No trackers.
+
+        This method is unrecommended because it doesn't give the user full control over running their .dsi file.
+        It will run whatever is on the stack aimlessly without any sort of direction to go into.
+
+        This process will not contain any errors unless it is in the .dsi file, You could try running a main function
+        from the .dsi file.
+
+    <b class="sub-section-header">the C main method (traditional)</b>
+        The "C main method" is the process of loading the file into Memory and executing it as a required file, as long
+        as the initial header contains a PROCESS:main function (<a href="./process-tables.2.html">see this</a>)
+        after running the main function, arguments are passed as an array of strings. Depending on how the disk is handling these arguments,
+        this also acts as an SDK for Sub-command-line interfaces.
+
+    <b class="sub-section-header">embedded development (sh, zsh, bash, etc ...)</b>
+        When using *.sh Files you can usually embed diskutility commands into it, and run it with one file.
+        You can turn it into an alias two ways.
+            * aliasing the file path (requires little permissions)
+            * chmod +x to create a env
+        You can take advantage of this feature using the .bashrc, .bash_profiles, etc .. for containing commands into files.
+        or you can execute files separately.
+
+        Here's a piece of code you can use.
+
+            alias diskutility="lua /path/to/diskutility.lua"
+        with this method, ensure you have an argparse.lua in your /home/ directory.
+        that's the only real issue with this method, is that you need to make sure your $PATH stays updated in order to contain
+        these commands without errors in bash, zsh, csh, etc ...
+
+        The second method is to use chmod to build a executable environment.
+        You can use the command, 'chmod +x diskutility.lua' after appending "#!/usr/bin/env lua" to the beginning of the file.
+        Then you can do ./diskutility.lua to get full features.
+
+        You can also Alias it to create a more convenient effect.
+
+
+
+</pre>
+
+
+</html>

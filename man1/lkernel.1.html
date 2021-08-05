@@ -1,0 +1,85 @@
+<html lang="en-US">
+
+<h1>LKernel(1) - Manual Page</h1>
+<link rel="stylesheet" href="../styles.css">
+
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+<!-- Add more headers -->
+<table class="sec-table">
+    <tr>
+        <td>
+            <p class="section-dir">
+                <a href="#NAME">NAME</a> | <a href="#SYNOPSIS">SYNOPSIS</a> | <a href="#DESCRIPTION">DESCRIPTION</a> | <a href="#EXAMPLES">EXAMPLES</a>
+            </p>
+        </td>
+    </tr>
+</table>
+
+<h3 id="NAME">NAME</h3>
+
+<pre>
+    LKernel - A Lua 5.4.3 Process which runs files using .dsi, .imrc, and .rc file extensions in Lua bytecode format.
+</pre>
+
+<h3 id="SYNOPSIS">SYNOPSIS</h3>
+
+<pre>
+    <em class="emphasis-command">[LKernel]
+        [base]
+            [functions & files]
+            [kernel syscalls]
+            [require libraries]
+        [lua bytecode]
+        [text utf-8 w/ bytes]</em>
+
+</pre>
+
+<h3 id="DESCRIPTION">DESCRIPTION</h3>
+<pre>
+    An LKernel is a .dsi file which runs Lua code using luaL_dofile(X, XX); Or the Lua dofile(filehandler); function.
+
+    <b class="sub-section-header">lua-std-5.4.3 compatibility</b>
+        The Compatibility with Lua 5.4 Standard library is seamless, you can view examples in the <a href="#EXAMPLES">EXAMPLES</a>
+        Header.
+</pre>
+
+<h3 id="EXAMPLES">EXAMPLES</h3>
+
+<pre class="prettyprint">
+    /*
+        ALL OF THESE CAN BE COMPILED AND RAN WITH THE DISKUTILITY COMMAND!
+    */
+
+
+    print("hello") // print hello!
+
+
+    print("Input at system level:")
+
+
+    local sysA = io.stdin:read() /* read stdin */
+
+
+    local var = 1
+
+
+    print(tostring(var + 1))
+
+
+    /* boolean testing */
+    print(1 + 1 == 2) // 1 (true)
+
+    /* testing required libraries */
+    require 'libmemio'
+
+    AllowUniversalLua()
+
+    MemPrint(1, "a")
+
+    /* testing lua std */
+
+    assert(1 + 1 == 2) // shouldn't be an error
+</pre>
+
+</html>
